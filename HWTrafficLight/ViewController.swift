@@ -189,6 +189,10 @@ class ViewController: UIViewController {
     }
     
     @objc func changeTrafficStateButtonDidTap(sender: UIButton) {
+        if changeTrafficStateButton.currentTitle == "START" {
+            changeTrafficStateButton.setTitle("NEXT", for: .normal)
+        }
+
         timerCounter = 10
         timerLabel.text = "10"
         timer.invalidate()

@@ -6,18 +6,19 @@
 //
 
 import UIKit
-//dev test
+
+private enum CurrentTrafficState {
+    case off, red, yellow, green
+}
+
 class ViewController: UIViewController {
-    
-    private enum CurrentTrafficState {
-        case off, red, yellow, green
-    }
-    
+      
     // MARK: - Диаметр фонаря, масштабирует весь светофор
     private let lightsDiameter = 85.0.withHeightRatio()
     
     private var timerCounter = 0
-    
+    // MARK: - Свойства светофора.
+    // Кейсы светофора(цвета, анимация перехода)
     private var currentTrafficState: CurrentTrafficState = .off {
         didSet {
             switch currentTrafficState {
@@ -58,13 +59,14 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+    // Каркас светофора
     private let carcassTrafficLight: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         return view
     }()
-        
+    
+    // Красный фонарь
     private let trafficRedLightView: UIView = {
         let view = UIView()
         view.backgroundColor = .red
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
         return view
     }()
     
+    // Желтый фонарь
     private let trafficYellowLightView: UIView = {
         let view = UIView()
         view.backgroundColor = .yellow
@@ -79,6 +82,7 @@ class ViewController: UIViewController {
         return view
     }()
     
+    // Зеленый фонарь
     private let trafficGreenLightView: UIView = {
         let view = UIView()
         view.backgroundColor = .green
@@ -86,6 +90,7 @@ class ViewController: UIViewController {
         return view
     }()
     
+    // Кнопка "START"
     private let changeTrafficStateButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .link
@@ -94,6 +99,7 @@ class ViewController: UIViewController {
         return button
     }()
     
+    // Лейбл таймера
     private let timerLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -103,11 +109,12 @@ class ViewController: UIViewController {
         return label
     }()
     
+    // Переменная таймер для логики таймера в методе "changeTrafficStateButtonDidTap"
     private var timer: Timer = {
-        let timer = Timer()
-        return timer
+        Timer()
     }()
-        
+    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,6 +133,7 @@ class ViewController: UIViewController {
 //        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     
+    // MARK: - AddSubviews
     private func addSubviews() {
         view.addSubview(carcassTrafficLight)
         view.addSubview(trafficRedLightView)
@@ -136,7 +144,9 @@ class ViewController: UIViewController {
         
         changeTrafficStateButton.addTarget(self, action: #selector(changeTrafficStateButtonDidTap(sender:)), for: .touchUpInside)
     }
-        
+     
+    // MARK: - Методы
+    // ConfigureLayout
     private func configureLayout() {
         
         /// Отступ между фонарями
@@ -174,7 +184,7 @@ class ViewController: UIViewController {
         timerLabel.center.x = view.center.x
         
     }
-    
+    // Цвет Градиент
     private func setGradientLayer(view: UIView) {
         let colorTop = UIColor().hexStringToUIColor(hex: "#0c0c0d").cgColor
         let colorBottom = UIColor().hexStringToUIColor(hex: "#636c6d").cgColor
@@ -188,6 +198,7 @@ class ViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at:0)
     }
     
+    // Логика таймера, смены цветов светофора и счетчик.
     @objc func changeTrafficStateButtonDidTap(sender: UIButton) {
         if changeTrafficStateButton.currentTitle == "START" {
             changeTrafficStateButton.setTitle("NEXT", for: .normal)
@@ -209,9 +220,9 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // Таймер
     @objc func updateCounter() {
-        //example functionality
+//        example functionality
         if timerCounter > 0 {
             timerLabel.text = "\(timerCounter)"
             timerCounter -= 1

@@ -7,8 +7,6 @@
 
 import UIKit
 
-//TEST//
-
 class ViewController: UIViewController {
     
     private enum CurrentTrafficState {

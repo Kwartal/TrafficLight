@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		71480F6D289321AE00841A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71480F6C289321AE00841A3F /* AppDelegate.swift */; };
 		71480F6F289321AE00841A3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71480F6E289321AE00841A3F /* SceneDelegate.swift */; };
-		71480F71289321AE00841A3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71480F70289321AE00841A3F /* ViewController.swift */; };
+		71480F71289321AE00841A3F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71480F70289321AE00841A3F /* MainViewController.swift */; };
 		71480F76289321AF00841A3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71480F75289321AF00841A3F /* Assets.xcassets */; };
 		71480F79289321AF00841A3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71480F77289321AF00841A3F /* LaunchScreen.storyboard */; };
 		71480F8128934A8400841A3F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71480F8028934A8400841A3F /* UIColor.swift */; };
@@ -20,7 +20,7 @@
 		71480F69289321AE00841A3F /* HWTrafficLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWTrafficLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71480F6C289321AE00841A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71480F6E289321AE00841A3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		71480F70289321AE00841A3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71480F70289321AE00841A3F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		71480F75289321AF00841A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71480F78289321AF00841A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71480F7A289321AF00841A3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +42,9 @@
 		71480F60289321AE00841A3F = {
 			isa = PBXGroup;
 			children = (
-				71480F6B289321AE00841A3F /* HWTrafficLight */,
+				71480F6C289321AE00841A3F /* AppDelegate.swift */,
+				71480F6E289321AE00841A3F /* SceneDelegate.swift */,
+				71480F6B289321AE00841A3F /* ViewControllers */,
 				71480F6A289321AE00841A3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,18 +57,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		71480F6B289321AE00841A3F /* HWTrafficLight */ = {
+		71480F6B289321AE00841A3F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				71480F6C289321AE00841A3F /* AppDelegate.swift */,
-				71480F6E289321AE00841A3F /* SceneDelegate.swift */,
-				71480F70289321AE00841A3F /* ViewController.swift */,
+				71480F70289321AE00841A3F /* MainViewController.swift */,
 				71480F8228934A8F00841A3F /* Extensions */,
 				71480F75289321AF00841A3F /* Assets.xcassets */,
 				71480F77289321AF00841A3F /* LaunchScreen.storyboard */,
 				71480F7A289321AF00841A3F /* Info.plist */,
 			);
-			path = HWTrafficLight;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		71480F8228934A8F00841A3F /* Extensions */ = {
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71480F71289321AE00841A3F /* ViewController.swift in Sources */,
+				71480F71289321AE00841A3F /* MainViewController.swift in Sources */,
 				71480F8128934A8400841A3F /* UIColor.swift in Sources */,
 				71480F8428935AD500841A3F /* Ratio.swift in Sources */,
 				71480F6D289321AE00841A3F /* AppDelegate.swift in Sources */,

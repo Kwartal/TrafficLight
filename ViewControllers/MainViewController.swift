@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  HWTrafficLight
 //
 //  Created by Богдан Баринов on 28.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     private enum CurrentTrafficState {
         case off, red, yellow, green
